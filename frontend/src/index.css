@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ————— Custom Tailwind Layer ————— */
+
 @property --border-angle {
   inherits: false;
   initial-value: 0deg;
@@ -32,4 +34,12 @@
 .auth-link {
   @apply px-4 py-2 inline-block bg-cyan-500/10 rounded-lg text-cyan-400
   hover:text-cyan-500 text-sm transition-colors;
+}
+
+/* ————— Mobile Keyboard Fix (iOS + Android) ————— */
+
+@supports (-webkit-touch-callout: none) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
